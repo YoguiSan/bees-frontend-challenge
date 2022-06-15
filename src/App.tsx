@@ -6,12 +6,15 @@ import AppContext from './contexts';
 
 function App() {
   const [name, setName] = useState<string>('');
+  const [isOfAge, setIsOfAge] = useState<boolean>(false);
 
   useEffect(() => {
     if (name && name.length > 1) {
       console.log('Name is: ', name);
     }
-  }, [name]);
+
+    console.log(`${isOfAge ? 'Is' : 'Not'} of age`);
+  }, [name, isOfAge]);
 
   return (
     <AppContext.Provider
@@ -19,6 +22,8 @@ function App() {
       value={{
         name,
         setName,
+        isOfAge,
+        setIsOfAge,
       }}
     >
       <Router />

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
 import React, { FC, useContext, useState } from 'react';
 
 import AppContext from '../../contexts';
@@ -7,12 +6,14 @@ import Article from './styles';
 
 function NamePage() {
   const {
+    name,
     setName,
+    isOfAge,
+    setIsOfAge,
   } = useContext(AppContext);
 
-  const [fullName, setFullName] = useState<string | undefined>();
-
-  const change = (({
+  /*
+  const changeName = (({
     target: {
       value,
     },
@@ -21,16 +22,19 @@ function NamePage() {
       value: string,
     },
   }):void => {
-    setFullName(value);
+    setName(value);
   });
+  */
 
   const submit = (event:React.MouseEvent<HTMLElement>):void => {
     event.preventDefault();
 
-    if (!fullName || fullName.length < 1) {
+    if (!name || name.length < 1) {
       console.log('Name is required');
+    } else if (!isOfAge) {
+      console.log('You must be 18 or older to enter');
     } else {
-      setName(fullName);
+      console.log('Redirecting...');
     }
   };
 
@@ -40,16 +44,37 @@ function NamePage() {
         <form
           id="name-age-form"
         >
-          <label>
+          <label
+            htmlFor="name-age-form__name"
+          >
             <p>Please, enter your full name below</p>
             <p>Only alphabetical characters are accepted</p>
             <input
               type="text"
               id="name-age-form__name"
               placeholder="Full name"
-              onChange={(event) => change(event)}
-              value={fullName}
+              onChange={({
+                target: {
+                  value,
+                },
+              }) => setName(value)}
+              value={name}
             />
+          </label>
+          <label
+            htmlFor="isOfAge"
+          >
+            <input
+              type="checkbox"
+              id="name-age-form__isOfAge"
+              onChange={({
+                target: {
+                  checked,
+                },
+              }) => setIsOfAge(checked)}
+              checked={isOfAge}
+            />
+            Are you older than 18 years old?
           </label>
           <button
             type="submit"
