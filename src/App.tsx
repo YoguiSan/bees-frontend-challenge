@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { FC, useState } from 'react';
+
+import Router from './routes';
+
+import AppContext from './contexts';
 
 function App() {
+  const [name, setName] = useState<string | undefined>();
+
   return (
-    <h1>Ovo</h1>
+    <AppContext.Provider
+      key="appcontext-provider"
+      value={{
+        name,
+        setName,
+      }}
+    >
+      <Router />
+    </AppContext.Provider>
   );
 }
 
