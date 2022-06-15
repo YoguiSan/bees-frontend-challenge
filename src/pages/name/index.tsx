@@ -1,9 +1,16 @@
-import React, { FC, useState } from 'react';
+/* eslint-disable react/jsx-filename-extension */
+import React, { FC, useContext, useState } from 'react';
+
+import AppContext from '../../contexts';
 
 import Article from './styles';
 
 function NamePage() {
-  const [name, setName] = useState<string | undefined>();
+  const {
+    setName,
+  } = useContext(AppContext);
+
+  const [fullName, setFullName] = useState<string | undefined>();
 
   const change = (({
     target: {
@@ -13,10 +20,19 @@ function NamePage() {
     target: {
       value: string,
     },
-  }) => {
-    console.log(value);
-    setName(value);
+  }):void => {
+    setFullName(value);
   });
+
+  const submit = (event:React.MouseEvent<HTMLElement>):void => {
+    event.preventDefault();
+
+    if (!fullName || fullName.length < 1) {
+      console.log('Name is required');
+    } else {
+      setName(fullName);
+    }
+  };
 
   return (
     <Article>
@@ -27,14 +43,21 @@ function NamePage() {
           <label>
             <p>Please, enter your full name below</p>
             <p>Only alphabetical characters are accepted</p>
-            <input 
+            <input
               type="text"
-              id="name"
-              placeholder='Full name'
-              onChange={event => change(event)}
-              value={name}
+              id="name-age-form__name"
+              placeholder="Full name"
+              onChange={(event) => change(event)}
+              value={fullName}
             />
           </label>
+          <button
+            type="submit"
+            id="name-age-form__submit"
+            onClick={((event:React.MouseEvent<HTMLElement>) => submit(event))}
+          >
+            Enter
+          </button>
         </form>
       </section>
     </Article>
