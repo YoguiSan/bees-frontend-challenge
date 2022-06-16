@@ -4,6 +4,8 @@ import Router from './routes';
 
 import AppContext from './contexts';
 
+import GlobalStyle from './globalStyles';
+
 function App() {
   const [name, setName] = useState<string>('');
   const [isOfAge, setIsOfAge] = useState<boolean>(false);
@@ -32,6 +34,7 @@ function App() {
         setIsOfAge,
       }}
     >
+      <GlobalStyle />
       <Router />
     </AppContext.Provider>
   );

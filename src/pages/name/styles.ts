@@ -1,4 +1,11 @@
 import Styles from 'styled-components';
 
-export default Styles.article`
+import Colors from '../../utils/Colors';
+
+const {
+  Yellow,
+} = Colors;
+
+export default Styles.main`
+  background: ${Yellow};
 `;
