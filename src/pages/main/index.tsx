@@ -39,8 +39,6 @@ function MainPage() {
     const request = async () => {
       const req = await list();
 
-      console.log(req);
-
       setBreweriesList(req);
     };
 

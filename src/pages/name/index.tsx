@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-filename-extension */
 import React, { FC, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -27,6 +28,8 @@ function NamePage() {
     }
   };
 
+  const replaceSpecialChars = (input:string):string => input.replace(/[^a-zA-Z0-9 ]/, '');
+
   return (
     <Article>
       <section>
@@ -46,7 +49,7 @@ function NamePage() {
                 target: {
                   value,
                 },
-              }) => setName(value)}
+              }) => setName(replaceSpecialChars(value))}
               value={name}
             />
           </label>
