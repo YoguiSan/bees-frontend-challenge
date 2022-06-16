@@ -19,6 +19,8 @@ For managing the global state I didn't use any external libraries, instead I rel
 
 Also, I didn't use any design systems, I decided to make the  components from scratch using HTML tags, but please check out this one I created a while ago: https://www.npmjs.com/package/pure-ui-react
 
+Ah, one more thing, I used Commitizen to format my commits; it's a really nice tool, and since I found out about it there's never been a single day I haven't used it
+
 ## Folder structure
 
 For components and pages, I opted for using a similar (though slightly adapted) structure to Angular, like so:
@@ -31,7 +33,7 @@ For components and pages, I opted for using a similar (though slightly adapted) 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--  index.tsx (the component/page itself)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--  styles.ts (styles, very conveniently named so)
 
-Files that are assets were included in an *assets* folder in the root of the src directory. Requests are handled in files located in the *services* folder, and any utilities (configuration, breakpoints and colors for using in Styled Components, etc.) are inside the *utils* folder. Also, their respective tests are inside a \_\_tests\_\_ folder located inside of their directory. Like this:
+Files that are assets (like images and fonts) were included in an *assets* folder in the root of the src directory. Requests are handled in files located in the *services* folder, and any utilities (configuration, breakpoints and colors for using in Styled Components, etc.) are inside the *utils* folder. Also, their respective tests are inside a \_\_tests\_\_ folder located inside of their directory. Like this:
 
 |--src\
 &nbsp;&nbsp;&nbsp;&nbsp;|--  utils\
@@ -41,7 +43,7 @@ Files that are assets were included in an *assets* folder in the root of the src
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--  \_\_tests\_\_\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--  Brewery.test.ts
 
-Also, the *router* gets its own folder, where all pages are imported and, well, routed
+Also, the *router* gets its own folder in src, where all pages are imported and, well, routed
 
 ## Running the project
 
