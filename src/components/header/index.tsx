@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import ArrowCircleLeftIcon from '../../assets/img/icons/ArrowCircleLeft.svg';
+
 import HeaderContainer from './styles';
 
 interface HeaderProps {
@@ -19,7 +21,10 @@ function Header({
         id="header__go-back-button"
         onClick={() => navigate('/')}
       >
-        Go back
+        <img src={ArrowCircleLeftIcon} />
+        <span>
+          Go back
+        </span>
       </button>
       <span id="header-name">
         {name}
