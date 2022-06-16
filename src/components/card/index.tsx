@@ -5,6 +5,11 @@ import Chip from '../chip';
 
 import CardStyles from './styles';
 
+import GraphIcon from '../../assets/img/icons/Graph.svg';
+import LocationIcon from '../../assets/img/icons/Location.svg';
+import PhoneIcon from '../../assets/img/icons/Phone.svg';
+import AddIcon from '../../assets/img/icons/Add.svg';
+
 function Card({
   name,
   type,
@@ -39,7 +44,7 @@ function Card({
         />
       </div>
       <p>
-        {street}
+        {street || ''}
       </p>
       <p>
         {city}
@@ -51,30 +56,42 @@ function Card({
         {' '}
         {country}
       </p>
-      <div className="chip-container">
-        <Chip
-          key={`${name}-type`}
-          text={type}
-          editable={false}
-          icon=""
-        />
-        <Chip
-          key={`${name}-zipcode`}
-          text={zipcode}
-          editable={false}
-          icon=""
-        />
-        <Chip
-          key={`${name}-phone`}
-          text={phone}
-          editable={false}
-          icon=""
-        />
+      <div className="card-body_chip-container">
+        {
+          type ? (
+            <Chip
+              key={`${name}-type`}
+              text={type}
+              editable={false}
+              icon={GraphIcon}
+            />
+          ) : ''
+        }
+        {
+          zipcode ? (
+            <Chip
+              key={`${name}-zipcode`}
+              text={zipcode}
+              editable={false}
+              icon={LocationIcon}
+            />
+          ) : ''
+        }
+        {
+          phone ? (
+            <Chip
+              key={`${name}-phone`}
+              text={phone}
+              editable={false}
+              icon={PhoneIcon}
+            />
+          ) : ''
+        }
         <Chip
           key={`${name}-add-more`}
           text="add more"
           editable
-          icon=""
+          icon={AddIcon}
         />
       </div>
     </CardStyles>
