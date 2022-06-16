@@ -42,6 +42,7 @@ export default Styles.main`
 
         &[for=isOfAge] {
           flex-direction: row;
+          justify-content: center;
         }
 
         > input {

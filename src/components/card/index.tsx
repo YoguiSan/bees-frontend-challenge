@@ -30,13 +30,14 @@ function Card({
 }) {
   return (
     <CardStyles>
-      <h2>{name}</h2>
-      <button
-        type="button"
-        onClick={() => handleDelete(id)}
-      >
-        Delete
-      </button>
+      <div className="card-header">
+        <h3>{name}</h3>
+        <button
+          type="button"
+          className="card-header_delete-button"
+          onClick={() => handleDelete(id)}
+        />
+      </div>
       <p>
         {street}
       </p>
