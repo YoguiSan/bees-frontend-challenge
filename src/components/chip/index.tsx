@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 
 import Div from './styles';
 
@@ -10,7 +10,7 @@ function Chip({
   text:string,
   editable:boolean,
   icon:string,
-}) {
+}):ReactElement {
   const [manualText, setManualText] = useState<string | undefined>();
   const [editing, setEditing] = useState<boolean>(false);
 

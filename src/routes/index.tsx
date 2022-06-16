@@ -1,10 +1,10 @@
-import React, { FC } from 'react';
+import React, { ReactElement } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Main from '../pages/main';
 import Name from '../pages/name';
 
-function Router() {
+function Router():ReactElement {
   return (
     <BrowserRouter>
       <Routes>

@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react';
+import React, { ReactElement, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import BeeLogo from '../../assets/img/image 1.png';
@@ -9,7 +9,7 @@ import { AppContextType } from '../../contexts/@types.app';
 
 import Article from './styles';
 
-function NamePage() {
+function NamePage():ReactElement {
   const {
     name,
     setName,

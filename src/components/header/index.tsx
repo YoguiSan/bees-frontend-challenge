@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { ReactElement } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import ArrowCircleLeftIcon from '../../assets/img/icons/ArrowCircleLeft.svg';
@@ -11,7 +11,7 @@ interface HeaderProps {
 
 function Header({
   name,
-}:HeaderProps) {
+}:HeaderProps):ReactElement {
   const navigate = useNavigate();
 
   return (

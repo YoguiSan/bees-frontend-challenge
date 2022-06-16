@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { ReactElement } from 'react';
 
 import Chip from '../chip';
 
@@ -31,7 +31,7 @@ function Card({
   country:string,
   zipcode:string,
   handleDelete:Function,
-}) {
+}):ReactElement {
   return (
     <CardStyles>
       <div className="card-header">

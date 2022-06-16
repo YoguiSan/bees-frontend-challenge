@@ -1,5 +1,5 @@
 import React, {
-  FC,
+  ReactElement,
   useContext,
   useEffect,
   useState,
@@ -30,7 +30,7 @@ interface IBrewery {
   postal_code:string,
 }
 
-function MainPage() {
+function MainPage():ReactElement {
   const [breweriesList, setBreweriesList] = useState<IBrewery[]>([]);
 
   const navigate = useNavigate();

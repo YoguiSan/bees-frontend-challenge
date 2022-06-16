@@ -22,10 +22,6 @@ module.exports = {
   ],
   rules: {
     'linebreak-style': 0,
+    'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
   },
-  /*
-  env: {
-    'jest/globals': true,
-  },
-  */
 };
