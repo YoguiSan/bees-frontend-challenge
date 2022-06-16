@@ -2,6 +2,8 @@
 import React, { FC, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import BeeLogo from '../../assets/img/image 1.png';
+
 import AppContext from '../../contexts';
 
 import Article from './styles';
@@ -84,6 +86,11 @@ function NamePage() {
           </button>
         </form>
       </section>
+      <img
+        id="bee-logo"
+        src={BeeLogo}
+        alt="Logo"
+      />
     </Article>
   );
 }
