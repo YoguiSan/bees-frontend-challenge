@@ -14,12 +14,9 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       }, {
-        test: /\.(png|jpg|gif|svg)$/i,
+        test: /\.(png|jpg|gif|svg|ttf)$/i,
         use: [{
-          loader: 'url-loader',
-          options: {
-            limit: 8192, // in bytes
-          },
+          loader: 'file-loader',
         }],
       },
     ],

@@ -5,8 +5,12 @@ import Colors from '../../utils/Colors';
 const Container:string = '#name-age-form-container';
 const Form:string = '#name-age-form';
 const SubmitButton:string = '#name-age-form__submit';
+const BeeLogo:string = '#bee-logo';
 
 const {
+  Blue,
+  DarkGray,
+  Gray,
   Yellow,
 } = Colors;
 
@@ -42,7 +46,9 @@ export default Styles.main`
 
         > input {
           &[type=text] {
-            padding: .5rem;
+            border: solid 1px ${Gray};
+            border-radius: 4px;
+            padding: 10px;
             margin: auto;
             width: 100%;
           }
@@ -55,9 +61,24 @@ export default Styles.main`
     }
 
     ${SubmitButton} {
+      background: ${Blue};
+      border: none;
+      border-radius: 4px;
       color: white;
-      padding: .5rem;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: .5rem 1rem;
       width: fit-content;
+
+      &:disabled {
+        background: ${DarkGray};
+      }
     }
+  }
+
+  ${BeeLogo} {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
   }
 `;
