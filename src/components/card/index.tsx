@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
 import React, { FC } from 'react';
 
 import Chip from '../chip';

@@ -6,7 +6,6 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
-    'jest',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -19,8 +18,14 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
+    'jest',
   ],
   rules: {
     'linebreak-style': 0,
   },
+  /*
+  env: {
+    'jest/globals': true,
+  },
+  */
 };

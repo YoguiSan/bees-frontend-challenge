@@ -2,17 +2,16 @@
  * @jest-environment jsdom
  */
 
- import React from 'react';
+import React from 'react';
 
- import Card from '../';
- 
- import {
-   render,
-   screen,
- } from '@testing-library/react';
- 
- beforeEach(() => {
-   render(
+import {
+  render,
+  screen,
+} from '@testing-library/react';
+import Card from '..';
+
+beforeEach(() => {
+  render(
     <Card
       city="São Paulo"
       country="Brazil"
@@ -25,15 +24,14 @@
       type="micro"
       zipcode="12345678"
       key="cervejaria-daqui-mesmo"
-    />
-   )
- });
- 
- describe('testes do componente card', () => {
-   test('componente montou', () => {
+    />,
+  );
+});
+
+describe('testes do componente card', () => {
+  test('componente montou', () => {
     const CardTitle = screen.getByText('Cervejaria daqui mesmo');
 
     expect(CardTitle).toBeDefined();
-   });
- });
- 
+  });
+});

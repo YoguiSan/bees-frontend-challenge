@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
 import React, { FC, useState } from 'react';
 
 import Div from './styles';

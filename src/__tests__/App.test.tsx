@@ -4,15 +4,14 @@
 
 import React from 'react';
 
-import App from '../App';
-
 import {
   render,
   screen,
 } from '@testing-library/react';
+import App from '../App';
 
 beforeEach(() => {
-  render(<App />)
+  render(<App />);
 });
 
 describe('testes do componente header', () => {

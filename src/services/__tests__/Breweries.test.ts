@@ -33,14 +33,13 @@ describe('testes da requisição de listar cervejarias', () => {
     expect(response).toEqual(BreweriesMock);
   });
 
-  test('ocorre erro ao listar cervejarias', async() => {
+  test('ocorre erro ao listar cervejarias', async () => {
     Nock
       .get('/breweries')
       .reply(500);
 
-      const response = await list();
+    const response = await list();
 
-      expect(typeof (response)).toEqual('object');
+    expect(typeof (response)).toEqual('object');
   });
 });
-

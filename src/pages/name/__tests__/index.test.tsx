@@ -41,7 +41,7 @@ describe('testes da página de informar nome', () => {
         <BrowserRouter>
           <Name />
         </BrowserRouter>
-      </AppContext.Provider>
+      </AppContext.Provider>,
     );
 
     NameInput = screen.getByPlaceholderText(NameInputLabel);
@@ -53,12 +53,11 @@ describe('testes da página de informar nome', () => {
     expect(NameInput).toBeDefined();
     expect(OfAgeCheckbox).toBeDefined();
     expect(SubmitButton).toBeDefined();
-    
   });
-  
+
   test('tenta acessar sem marcar opção de ser maior de idade', () => {
     fireEvent.change(NameInput, { target: { value: 'Test' } });
-  
+
     SubmitButton = screen.getByText(SubmitButtonId);
 
     expect(SubmitButton.disabled).toBeTruthy();

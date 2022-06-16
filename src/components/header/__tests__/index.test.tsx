@@ -19,13 +19,12 @@ beforeEach(() => {
       <Header
         name="Joe"
       />
-    </BrowserRouter>
+    </BrowserRouter>,
   );
 });
 
 describe('testes do componente header', () => {
   test('componente montou', () => {
-
     const GoBackButton = screen.getByText('Go back');
 
     expect(GoBackButton).toBeDefined();

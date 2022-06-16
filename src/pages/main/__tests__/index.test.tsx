@@ -56,7 +56,7 @@ describe('testes da página principal', () => {
         <BrowserRouter>
           <Main />
         </BrowserRouter>
-      </AppContext.Provider>
+      </AppContext.Provider>,
     );
   });
 
