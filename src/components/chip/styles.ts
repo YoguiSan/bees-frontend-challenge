@@ -18,4 +18,8 @@ margin: 1rem;
 img {
   margin-right: .5rem;
 }
+
+input {
+  width: 60%;
+}
 `;

@@ -17,12 +17,17 @@ function Chip({
 
   const change = (event: any):void => {
     const {
+      key,
       target: {
         value,
       },
     } = event;
 
-    setManualText(value);
+    if (key === 'Enter') {
+      setManualText(value);
+
+      setEditing(false);
+    }
   };
 
   return (
@@ -35,7 +40,11 @@ function Chip({
         src={icon}
         alt={text}
       />
-      {manualText || text}
+      {
+        !editing
+          ? (manualText || text)
+          : ''
+      }
       {editing && (
         <input
           type="text"
