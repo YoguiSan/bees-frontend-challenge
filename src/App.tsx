@@ -9,6 +9,12 @@ function App() {
   const [isOfAge, setIsOfAge] = useState<boolean>(false);
 
   useEffect(() => {
+    window.process = {
+      ...window.process,
+    };
+  }, []);
+
+  useEffect(() => {
     if (name && name.length > 1) {
       console.log('Name is: ', name);
     }
