@@ -7,7 +7,7 @@ module.exports = {
   },
   collectCoverage: true,
   collectCoverageFrom: [
-    './src/**/*.ts[x]',
+    './src/**/*.{ts,tsx}',
     '!**/node_modules/**',
   ],
   modulePathIgnorePatterns: ["<rootDir>/src/__tests__/tools"],
