@@ -16,14 +16,6 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
-    if (name && name.length > 1) {
-      console.log('Name is: ', name);
-    }
-
-    console.log(`${isOfAge ? 'Is' : 'Not'} of age`);
-  }, [name, isOfAge]);
-
   return (
     <AppContext.Provider
       key="appcontext-provider"

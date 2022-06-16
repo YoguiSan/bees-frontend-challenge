@@ -32,7 +32,9 @@ function NamePage() {
 
   return (
     <Article>
-      <section>
+      <section
+        id="name-age-form-container"
+      >
         <form
           id="name-age-form"
         >
