@@ -6,6 +6,8 @@ import BeeLogo from '../../assets/img/image 1.png';
 
 import AppContext from '../../contexts';
 
+import { AppContextType } from '../../contexts/@types.app';
+
 import Article from './styles';
 
 function NamePage() {
@@ -14,7 +16,7 @@ function NamePage() {
     setName,
     isOfAge,
     setIsOfAge,
-  } = useContext(AppContext);
+  }:AppContextType = useContext(AppContext);
 
   const navigate = useNavigate();
 

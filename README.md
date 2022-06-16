@@ -50,3 +50,5 @@ Also, the *router* gets its own folder in src, where all pages are imported and,
 But just me telling what a wonderful job I did is not enough, now is it? It's no good if you can't see it for yourselves. And doing that is really simple:
 - Running **npm install** (or **yarn install** if you're into that kind of thing, though I do not recommend it) will install any dependencies needed
 - Once all the dependencies are installed and set, running **npm start** or **yarn start** should do it, and the project will automatically open in *https://localhost:3000*
+
+And I guess that's it! Any doubts or comments please reach out to me, and also feel free to check out my GitHub repository at https://github.com/YoguiSan

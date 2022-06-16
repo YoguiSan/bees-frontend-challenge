@@ -17,18 +17,22 @@ import Header from '../../components/header';
 
 import AppContext from '../../contexts';
 
+import { AppContextType } from '../../contexts/@types.app';
+
+interface IBrewery {
+  id:string,
+  name:string,
+  brewery_type:string,
+  street:string,
+  city:string,
+  state:string,
+  country:string,
+  phone:string,
+  postal_code:string,
+}
+
 function MainPage() {
-  const [breweriesList, setBreweriesList] = useState<{
-    id:string,
-    name:string,
-    brewery_type:string,
-    street:string,
-    city:string,
-    state:string,
-    country:string,
-    phone:string,
-    postal_code:string,
-  }[]>([]);
+  const [breweriesList, setBreweriesList] = useState<IBrewery[]>([]);
 
   const navigate = useNavigate();
 
@@ -40,7 +44,7 @@ function MainPage() {
 
   const {
     name,
-  } = useContext(AppContext);
+  }:AppContextType = useContext(AppContext);
 
   useEffect(() => {
     if (!name || name.length < 1) {
@@ -48,7 +52,7 @@ function MainPage() {
     }
 
     const request = async () => {
-      const req = await list();
+      const req:IBrewery[] = await list();
 
       setBreweriesList(req);
     };
@@ -73,17 +77,7 @@ function MainPage() {
             country,
             phone,
             postal_code: zipcode,
-          }:{
-            id:string,
-            name:string,
-            brewery_type:string,
-            street:string,
-            city:string,
-            state:string,
-            country:string,
-            phone:string,
-            postal_code:string,
-          }) => (
+          }:IBrewery) => (
             <Card
               key={id}
               id={id}
