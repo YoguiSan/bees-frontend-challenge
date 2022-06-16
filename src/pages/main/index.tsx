@@ -18,7 +18,17 @@ import Header from '../../components/header';
 import AppContext from '../../contexts';
 
 function MainPage() {
-  const [breweriesList, setBreweriesList] = useState([]);
+  const [breweriesList, setBreweriesList] = useState<{
+    id:string,
+    name:string,
+    brewery_type:string,
+    street:string,
+    city:string,
+    state:string,
+    country:string,
+    phone:string,
+    postal_code:string,
+  }[]>([]);
 
   const navigate = useNavigate();
 

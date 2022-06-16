@@ -12,16 +12,21 @@ function Chip({
   editable:boolean,
   icon:string,
 }) {
-  const [manualText, setManualText] = useState();
-  const [editing, setEditing] = useState(false);
+  const [manualText, setManualText] = useState<string | undefined>();
+  const [editing, setEditing] = useState<boolean>(false);
 
-  const change = (event: any):void => {
+  const change = (event: React.SyntheticEvent):void => {
     const {
       key,
       target: {
         value,
       },
-    } = event;
+    } = event as unknown as {
+      key: string,
+      target: {
+        value: string,
+      },
+    };
 
     if (key === 'Enter') {
       setManualText(value);
