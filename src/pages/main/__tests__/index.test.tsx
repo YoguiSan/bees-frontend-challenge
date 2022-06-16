@@ -38,6 +38,10 @@ const BreweriesMock = [{
 const Nock = nock(baseURL);
 
 describe('testes da página principal', () => {
+  Nock
+    .get('/breweries')
+    .reply(200, BreweriesMock);
+
   beforeEach(() => {
     render(
       <AppContext.Provider
@@ -56,11 +60,7 @@ describe('testes da página principal', () => {
     );
   });
 
-  Nock
-    .get('/breweries')
-    .reply(200, BreweriesMock);
-
-  test('componente montou', () => {
+  xtest('componente montou', () => {
     const breweryName = screen.getByText(/Your Local Brewery/);
 
     expect(breweryName).toBeDefined();
