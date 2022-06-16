@@ -48,6 +48,7 @@ function NamePage() {
             <input
               type="text"
               id="name-age-form__name"
+              data-testid="name-age-form__name"
               placeholder="Full name"
               onChange={({
                 target: {
@@ -63,6 +64,7 @@ function NamePage() {
             <input
               type="checkbox"
               id="name-age-form__isOfAge"
+              data-testid="name-age-form__isOfAge"
               onChange={({
                 target: {
                   checked,
@@ -75,6 +77,7 @@ function NamePage() {
           <button
             type="submit"
             id="name-age-form__submit"
+            data-testid="name-age-form__submit"
             onClick={((event:React.MouseEvent<HTMLElement>) => submit(event))}
             disabled={
               !isOfAge

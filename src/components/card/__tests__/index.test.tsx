@@ -31,7 +31,9 @@
  
  describe('testes do componente card', () => {
    test('componente montou', () => {
-    
+    const CardTitle = screen.getByText('Cervejaria daqui mesmo');
+
+    expect(CardTitle).toBeDefined();
    });
  });
  

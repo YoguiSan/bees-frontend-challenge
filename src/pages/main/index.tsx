@@ -14,6 +14,7 @@ import {
 import Main from './styles';
 import Card from '../../components/card';
 import Header from '../../components/header';
+
 import AppContext from '../../contexts';
 
 function MainPage() {
