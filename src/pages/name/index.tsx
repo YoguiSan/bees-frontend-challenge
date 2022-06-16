@@ -1,4 +1,5 @@
-import React, { FC, useContext, useState } from 'react';
+import React, { FC, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import AppContext from '../../contexts';
 
@@ -12,19 +13,7 @@ function NamePage() {
     setIsOfAge,
   } = useContext(AppContext);
 
-  /*
-  const changeName = (({
-    target: {
-      value,
-    },
-  }: {
-    target: {
-      value: string,
-    },
-  }):void => {
-    setName(value);
-  });
-  */
+  const navigate = useNavigate();
 
   const submit = (event:React.MouseEvent<HTMLElement>):void => {
     event.preventDefault();
@@ -34,7 +23,7 @@ function NamePage() {
     } else if (!isOfAge) {
       console.log('You must be 18 or older to enter');
     } else {
-      console.log('Redirecting...');
+      navigate('/main');
     }
   };
 

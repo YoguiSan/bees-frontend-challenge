@@ -19,18 +19,16 @@ import AppContext from '../../contexts';
 function MainPage() {
   const [breweriesList, setBreweriesList] = useState([]);
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const {
     name,
   } = useContext(AppContext);
 
   useEffect(() => {
-    /*
     if (!name || name.length < 1) {
       navigate('/');
     }
-    */
 
     const request = async () => {
       const req = await list();
