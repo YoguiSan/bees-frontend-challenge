@@ -72,6 +72,11 @@ function NamePage() {
             type="submit"
             id="name-age-form__submit"
             onClick={((event:React.MouseEvent<HTMLElement>) => submit(event))}
+            disabled={
+              !isOfAge
+              || !name
+              || name.length < 1
+            }
           >
             Enter
           </button>
