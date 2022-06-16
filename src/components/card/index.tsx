@@ -14,7 +14,10 @@ function Card({
   state,
   country,
   zipcode,
+  handleDelete,
+  id,
 }:{
+  id:string,
   name:string,
   type:string,
   phone:string,
@@ -23,10 +26,17 @@ function Card({
   state:string,
   country:string,
   zipcode:string,
+  handleDelete:Function,
 }) {
   return (
     <CardStyles>
       <h2>{name}</h2>
+      <button
+        type="button"
+        onClick={() => handleDelete(id)}
+      >
+        Delete
+      </button>
       <p>
         {street}
       </p>

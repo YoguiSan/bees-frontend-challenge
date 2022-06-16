@@ -21,6 +21,12 @@ function MainPage() {
 
   const navigate = useNavigate();
 
+  const deleteBrewery = (id:string):void => {
+    const changedList = breweriesList.filter((brewery) => brewery.id !== id);
+
+    setBreweriesList(changedList);
+  };
+
   const {
     name,
   } = useContext(AppContext);
@@ -71,6 +77,7 @@ function MainPage() {
           }) => (
             <Card
               key={id}
+              id={id}
               name={breweryName}
               type={type}
               street={street}
@@ -79,6 +86,7 @@ function MainPage() {
               country={country}
               phone={phone}
               zipcode={zipcode}
+              handleDelete={deleteBrewery}
             />
           ))
         }
