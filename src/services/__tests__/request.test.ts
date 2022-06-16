@@ -26,8 +26,6 @@ describe('testes de requisições', () => {
 
     const response = await request(url, 'get');
 
-    console.log(response);
-
     expect(response).toEqual(mockedResponse);
   });
 
