@@ -4,23 +4,32 @@ import Breakpoints from '../../utils/Breakpoints';
 
 import TrashIcon from '../../assets/img/icons/Trash.svg';
 
-const Header = '.card-header';
-const DeleteButton = '.card-header_delete-button';
-const ChipContainer = '.card-body_chip-container';
+interface Props {
+  windowWidth?: number | undefined;
+}
 
-const Mobile = `
-@media (max-width: ${Breakpoints.medium}px) {
+const Header:string = '.card-header';
+const DeleteButton:string = '.card-header_delete-button';
+const ChipContainer:string = '.card-body_chip-container';
+
+const Mobile:string = `
+@media all and (max-width: ${Breakpoints.medium}px) {
   width: 100%;
 }
 `;
 
-export default Styles.div`
+export default Styles.div<Props>`
 border: 1px solid black;
 box-sizing: border-box;
 padding: 1rem;
 margin: 1rem;
 min-height: 282px;
-width: 30%;
+width: ${
+  ({
+    windowWidth,
+  }:Props):string => (
+    windowWidth <= Breakpoints.medium ? '100%' : '30%'
+  )};
 
 ${Header} {
   display: flex;

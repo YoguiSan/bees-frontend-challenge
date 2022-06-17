@@ -51,6 +51,7 @@ describe('testes da página principal', () => {
           setName: (name:string) => console.log(name),
           isOfAge: true,
           setIsOfAge: (isOfAge:boolean) => console.log(isOfAge),
+          width: 920,
         }}
       >
         <BrowserRouter>

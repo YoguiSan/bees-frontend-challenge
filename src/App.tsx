@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 
 import Router from './routes';
 
@@ -6,14 +6,27 @@ import AppContext from './contexts';
 
 import GlobalStyle from './globalStyles';
 
-function App() {
+function App():ReactElement {
   const [name, setName] = useState<string>('');
   const [isOfAge, setIsOfAge] = useState<boolean>(false);
+  const [width, setWidth] = useState<number>(0);
 
   useEffect(() => {
-    window.process = {
-      ...window.process,
+    const set = ():void => {
+      const {
+        offsetWidth,
+      }:{
+        offsetWidth:number,
+      } = document.body;
+
+      setWidth(offsetWidth);
     };
+
+    window.onresize = ():void => {
+      set();
+    };
+
+    set();
   }, []);
 
   return (
@@ -24,6 +37,7 @@ function App() {
         setName,
         isOfAge,
         setIsOfAge,
+        width,
       }}
     >
       <GlobalStyle />

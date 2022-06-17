@@ -3,4 +3,5 @@ export type AppContextType = {
   isOfAge: boolean,
   setName: (name: string) => void,
   setIsOfAge: (isOfAge: boolean) => void,
+  width: number | undefined,
 };

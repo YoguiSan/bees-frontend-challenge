@@ -36,6 +36,7 @@ describe('testes da página de informar nome', () => {
           setName: (nameInput:string) => name = nameInput,
           isOfAge,
           setIsOfAge: (isOfAgeInput:boolean) => isOfAge = isOfAgeInput,
+          width: 920,
         }}
       >
         <BrowserRouter>
