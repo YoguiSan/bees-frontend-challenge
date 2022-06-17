@@ -5,19 +5,29 @@
 import React from 'react';
 
 import {
+  prettyDOM,
   render,
+  RenderResult,
   screen,
 } from '@testing-library/react';
 import App from '../App';
 
-beforeEach(() => {
-  render(<App />);
-});
+let renderer:RenderResult;
 
-describe('testes do componente header', () => {
+describe('testes do componente app', () => {
+  beforeEach(() => {
+    renderer = render(<App />);
+  });
+
   test('componente montou', () => {
-    const FormText = screen.getByText('Please, enter your full name below');
+    const Container = prettyDOM(renderer.container);
+
+    expect(Container).toBeDefined();
+
+    /*
+    const FormText = screen.getByText(/Please, enter your full name below/);
 
     expect(FormText).toBeDefined();
+    */
   });
 });
