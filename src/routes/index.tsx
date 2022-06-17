@@ -1,8 +1,8 @@
-import React, { ReactElement } from 'react';
+import React, { LazyExoticComponent, ReactElement, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Main from '../pages/main';
-import Name from '../pages/name';
+const Main:LazyExoticComponent<any> = React.lazy(() => import('../pages/main'));
+const Name:LazyExoticComponent<any> = React.lazy(() => import('../pages/name'));
 
 function Router():ReactElement {
   return (
@@ -10,11 +10,19 @@ function Router():ReactElement {
       <Routes>
         <Route
           path="/"
-          element={<Name />}
+          element={(
+            <Suspense fallback={<></>}>
+              <Name />
+            </Suspense>
+          )}
         />
         <Route
           path="/main"
-          element={<Main />}
+          element={(
+            <Suspense fallback={<></>}>
+              <Main />
+            </Suspense>
+          )}
         />
       </Routes>
     </BrowserRouter>

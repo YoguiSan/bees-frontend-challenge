@@ -1,6 +1,12 @@
 import Styles from 'styled-components';
 
+import Breakpoints from '../../utils/Breakpoints';
+
 import Colors from '../../utils/Colors';
+
+interface Props {
+  windowWidth?: number | undefined;
+}
 
 const Container:string = '#name-age-form-container';
 const Form:string = '#name-age-form';
@@ -15,6 +21,7 @@ const {
 } = Colors;
 
 export default Styles.main`
+  
   background: ${Yellow};
   display: flex;
   height: 100%;
@@ -81,5 +88,9 @@ export default Styles.main`
     position: absolute;
     left: 1rem;
     bottom: 1rem;
+  ${({ windowWidth }:Props):string => (
+    windowWidth <= Breakpoints.large ? 'width: 20%;' : ''
+  )};
+    }
   }
 `;

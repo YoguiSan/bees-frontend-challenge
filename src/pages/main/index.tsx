@@ -14,6 +14,8 @@ import Main from './styles';
 import Card from '../../components/card';
 import Header from '../../components/header';
 
+import LoaderIcon from '../../assets/img/icons/Loader.svg';
+
 import AppContext from '../../contexts';
 
 import { AppContextType } from '../../contexts/@types.app';
@@ -32,6 +34,7 @@ interface IBrewery {
 
 function MainPage():ReactElement {
   const [breweriesList, setBreweriesList] = useState<IBrewery[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const navigate = useNavigate();
 
@@ -48,15 +51,16 @@ function MainPage():ReactElement {
   useEffect(() => {
     if (!name || name.length < 1) {
       navigate('/');
+    } else {
+      const request = async () => {
+        setLoading(true);
+        const req:IBrewery[] = await list();
+
+        setBreweriesList(req);
+        setLoading(false);
+      };
+      request();
     }
-
-    const request = async () => {
-      const req:IBrewery[] = await list();
-
-      setBreweriesList(req);
-    };
-
-    request();
   }, []);
 
   return (
@@ -65,6 +69,19 @@ function MainPage():ReactElement {
         name={name}
       />
       <Main>
+        {
+          loading
+            ? (
+              <figure
+                id="loader-container"
+              >
+                <img
+                  src={LoaderIcon}
+                  alt="Loading..."
+                />
+              </figure>
+            ) : ''
+        }
         {
           breweriesList.map(({
             id,

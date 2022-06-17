@@ -15,6 +15,7 @@ function NamePage():ReactElement {
     setName,
     isOfAge,
     setIsOfAge,
+    width,
   }:AppContextType = useContext(AppContext);
 
   const navigate = useNavigate();
@@ -34,7 +35,9 @@ function NamePage():ReactElement {
   const replaceSpecialChars = (input:string):string => input.replace(/[^a-zA-Z0-9 ]/, '');
 
   return (
-    <Article>
+    <Article
+      windowWidth={width}
+    >
       <section
         id="name-age-form-container"
       >
